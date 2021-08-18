@@ -12,6 +12,13 @@ const Intern = require('./lib/Intern');
 const teamArray = [];
 
 
+console.log(`
+    =================
+    Create a new Team
+    =================
+    `)
+    
+
 const managerQuestions = () => {
     return (
         inquirer
@@ -29,6 +36,7 @@ const managerQuestions = () => {
                 //     }
                 // }
             },
+
             {
                 type: 'input',
                 name: 'managerId',
@@ -43,6 +51,7 @@ const managerQuestions = () => {
                 //     }
                 // }
             },
+
             {
                 type: 'input',
                 name: 'managerEmail',
@@ -57,6 +66,7 @@ const managerQuestions = () => {
                 //     }
                 // }
             },
+
             {
                 type: 'input',
                 name: 'managerPhone',
@@ -72,6 +82,7 @@ const managerQuestions = () => {
                 // }
             }
         ])
+
         .then((answers) => {
             const newManager = new Manager(
                 answers.managerNameInput,
@@ -83,8 +94,6 @@ const managerQuestions = () => {
             teamArray.push(newManager);
             console.log('Manager Added!')
         }));
-        
-        
     };
     
     const engineerQuestions = () => {
@@ -104,6 +113,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'engineerId',
@@ -118,6 +128,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'engineerEmail',
@@ -132,6 +143,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'engineerGithub',
@@ -147,6 +159,7 @@ const managerQuestions = () => {
                 }
             }
         ])
+
         .then((engAnswers) => {
             const newEngineer = new Engineer(
                 engAnswers.engineerNameInput,
@@ -178,6 +191,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'internId',
@@ -192,6 +206,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'internEmail',
@@ -206,6 +221,7 @@ const managerQuestions = () => {
                     }
                 }
             },
+
             {
                 type: 'input',
                 name: 'internSchool',
@@ -221,6 +237,7 @@ const managerQuestions = () => {
                 }
             }
         ])
+
         .then((intAnswers) => {
             const newIntern = new Intern(
                 intAnswers.internNameInput,
@@ -229,8 +246,17 @@ const managerQuestions = () => {
                 intAnswers.internGithubInput
             )
             teamArray.push(newIntern);
-            console.logg('Intern Added!');
+            console.log('Intern Added!');
         })
+        .then(function() {
+            const generatePage = require('./src/page-template');
+            const generatedHtml = require('./src/page-template');
+        })
+        .then(function(teamArray) {
+            console.log(teamArray);
+            generateTeam.writeFile /*(JSON.stringify*/(generatedHtml)/*)*/;
+        });
+        
         
     }
   
@@ -238,15 +264,10 @@ const managerQuestions = () => {
 
 
 
-    console.log(`
-    =================
-    Create a new Team
-    =================
-    `)
     
-    managerQuestions();
-    engineerQuestions();
-    internQuestions()
+    
+       
+    
 
 
         // .then(function(data) {
@@ -256,14 +277,6 @@ const managerQuestions = () => {
 
         // })
 
-        .then(function() {
-            const generatePage = require('./src/page-template');
-            const generatedHtml = require('./src/page-template');
-        })
-        .then(function(teamArray) {
-            console.log(teamArray);
-            generateTeam.writeFile /*(JSON.stringify*/(generatedHtml)/*)*/;
-        });
         
 
 
