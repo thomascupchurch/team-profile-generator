@@ -1,14 +1,13 @@
-
-
-const inquirer = require("inquirer");
-const index = require('../index');
-const teamArray = index.teamArray;
-console.log(teamArray);
-// const myArr = arrayInfo.teamArray;
-let generatedHtml = '';
-
+const Employee = require("../lib/Employee");
+const Manager = require("../lib/Manager");
+const Engineer = require("../lib/Engineer");
+const Intern = require("../lib/Intern");
+ 
+  
   const generateTeam = (teamArray) => {
     
+    let generatedHtml = '';
+
     teamArray.forEach((element) => {
       if (element instanceof Manager) {
         generatedHtml += `
@@ -48,11 +47,15 @@ let generatedHtml = '';
         </div>`;
       }
     })
+    
+      return generatedHtml;
+   
 
   };
 
-  const htmlTemplate = 
-`
+  const htmlTemplate = (teamArray) => {
+  return (
+  `
   <!DOCTYPE html> 
   <html lang="en"> 
   <head>
@@ -72,14 +75,17 @@ let generatedHtml = '';
       </div>
     </header>
     <main class="container my-5">
-    ${generateTeam()}
+    ${generateTeam(teamArray)}
     </main>
     </body>
     </html>
     `
+  )
     ;
-  generatedHtml += htmlTemplate;
+     
+  }
+  // generatedHtml += htmlTemplate;
   
   // generatedHtml += generateTeam;
   
-  module.exports = generatedHtml;
+  module.exports = htmlTemplate;

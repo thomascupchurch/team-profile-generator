@@ -17,7 +17,7 @@ test('returns valid email for the manager', () => {
 
 test('returns ten digit phone number', () => {
     const manager = new Manager('Boss', 2, "boss@company.com", '9012615405');
-    expect(manager.officeNumber).toBe('9012615405');
+    expect(manager.managerPhone).toBe('9012615405');
 });
 
 test('returns role of manager for manager', () => {
