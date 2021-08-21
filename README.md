@@ -17,3 +17,11 @@ inquirer
 ![screenshot](assets/generated-team.png)
 ![screenshot](assets/team-generator-cli.png)
 
+## Credits
+Created by Thomas Upchurch
+
+## Email 
+thomascupchurch@gmail.com
+
+## Github
+github.com/thomascupchurch
