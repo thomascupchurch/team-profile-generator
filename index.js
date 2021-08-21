@@ -22,7 +22,7 @@ const userPrompt = async () => {
             type: "list",
             name: "userRoleInput",
             message: "What role would you like to add?",
-            choices: ["engineer", "intern", "quit"],
+            choices: ["engineer", "intern", "finish"],
         });
     if (answers.userRoleInput == "engineer") {
         engineerQuestions();

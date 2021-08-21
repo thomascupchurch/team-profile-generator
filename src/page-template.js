@@ -11,18 +11,23 @@ const Intern = require("../lib/Intern");
     teamArray.forEach((element) => {
       if (element instanceof Manager) {
         generatedHtml += `
-        <div class='card' style='width: 18rem;'>
+          <div class="col">
+          <div class='card' style='width: 18rem;'>
           <div class ='card-header'>
           ${element.name}
           </div>
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
+          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
           <li class='list-group-item'>${element.getOfficeNumber()}</li>
         </ul>
-        </div>`; 
+        </div>
+        </div>
+        `; 
       } else if (element instanceof Engineer) {
         generatedHtml += `
+        <div class="col">
         <div class='card' style='width: 18rem;'>
         <div class='card-header'>
         ${element.name}
@@ -30,11 +35,15 @@ const Intern = require("../lib/Intern");
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
-          <li class='list-group-item'>${element.getGithub()}</li>
+          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
+          <li class='list-group-item'><a href="https://github.com/${element.getGithub()}">${element.getGithub()}</a></li>
           </ul>
-        </div>`;
+        </div>
+        </div>
+        `;
       } else if (element instanceof Intern) {
         generatedHtml += `
+        <div class="col">
         <div class='card' style='width: 18rem;'>
         <div class='card-header'>
         ${element.name}
@@ -42,9 +51,12 @@ const Intern = require("../lib/Intern");
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
+          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
           <li class='list-group-item'>${element.getSchool()}</li>
           </ul>
-        </div>`;
+        </div>
+        </div>
+        `;
       }
     })
     
@@ -70,12 +82,14 @@ const Intern = require("../lib/Intern");
   </head>
   <body>
     <header>
-      <div class="container flex-row justify-space-between align-center py-3">
-        <h1 class="page-title text-secondary bg-dark py-2 px-3"></h1>
+      <div class="container flex-row justify-space-between align-center py-3" style="background-color:brown;">
+        <h1 class="page-title text-secondary bg-dark py-2 px-3" style="background-color:red">My Team</h1>
       </div>
     </header>
     <main class="container my-5">
+    <div class="row">
     ${generateTeam(teamArray)}
+    </div>
     </main>
     </body>
     </html>
