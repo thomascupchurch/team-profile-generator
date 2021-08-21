@@ -3,11 +3,11 @@ const Manager = require("../lib/Manager");
 const Engineer = require("../lib/Engineer");
 const Intern = require("../lib/Intern");
  
-  
+// function using the array to create the html content  
   const generateTeam = (teamArray) => {
-    
+// empty string to hold html content as it's created   
     let generatedHtml = '';
-
+// function to use card templates to create each instance of each role
     teamArray.forEach((element) => {
       if (element instanceof Manager) {
         generatedHtml += `
@@ -64,7 +64,7 @@ const Intern = require("../lib/Intern");
    
 
   };
-
+// template for html boilerplate, with generateTeam() function inserted, so becomes full html code
   const htmlTemplate = (teamArray) => {
   return (
   `
@@ -78,7 +78,7 @@ const Intern = require("../lib/Intern");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Public+Sans:300i,300,500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+  
   </head>
   <body>
     <header>
