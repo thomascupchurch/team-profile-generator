@@ -13,13 +13,13 @@ const Intern = require("../lib/Intern");
         generatedHtml += `
           <div class="col">
           <div class='card' style='width: 18rem;'>
-          <div class ='card-header'>
+          <div class ='card-header' style="background-color:lightblue">
           ${element.name}
           </div>
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
-          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
+          <li class='list-group-item'><address><a href="mailto:${element.email}">${element.email}</a></address></li>
           <li class='list-group-item'>${element.getOfficeNumber()}</li>
         </ul>
         </div>
@@ -29,13 +29,13 @@ const Intern = require("../lib/Intern");
         generatedHtml += `
         <div class="col">
         <div class='card' style='width: 18rem;'>
-        <div class='card-header'>
+        <div class='card-header' style="background-color:lightblue">
         ${element.name}
         </div>
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
-          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
+          <li class='list-group-item'><address><a href="mailto:${element.email}">${element.email}</a></address></li>
           <li class='list-group-item'><a href="https://github.com/${element.getGithub()}">${element.getGithub()}</a></li>
           </ul>
         </div>
@@ -45,13 +45,13 @@ const Intern = require("../lib/Intern");
         generatedHtml += `
         <div class="col">
         <div class='card' style='width: 18rem;'>
-        <div class='card-header'>
+        <div class='card-header' style="background-color:lightblue">
         ${element.name}
         </div>
         <ul class='list-group list-group-flush'>
           <li class='list-group-item'>${element.getRole()}</li>
           <li class='list-group-item'>${element.id}</li>
-          <li class='list-group-item'><address><a href="${element.email}">${element.email}</a></address></li>
+          <li class='list-group-item'><address><a href="mailto:${element.email}">${element.email}</a></address></li>
           <li class='list-group-item'>${element.getSchool()}</li>
           </ul>
         </div>

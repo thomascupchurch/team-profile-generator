@@ -41,57 +41,57 @@ const managerQuestions = async () => {
                 type: "input",
                 name: "managerName",
                 message: "What is the name of the manager of this team?",
-                // validate: managerNameInput => {
-                //     if (managerNameInput) {
-                //       return true;
-                //     } else {
-                //       console.log('You need to enter a manager name!');
-                //       return false;
-                //     }
-                // }
+                validate: managerNameInput => {
+                    if (managerNameInput) {
+                      return true;
+                    } else {
+                      console.log('You need to enter a manager name!');
+                      return false;
+                    }
+                }
             },
 
             {
                 type: "input",
                 name: "managerId",
                 message: "What is the ID for the manager?",
-                // validate: managerIdInput => {
-                //     const parsedId = parseInt(managerIdInput);
-                //     if (managerIdInput && parsedId == managerIdInput) {
-                //       return true;
-                //     } else {
-                //       console.log('You need to enter a manager ID!');
-                //       return false;
-                //     }
-                // }
+                validate: managerIdInput => {
+                    const parsedId = parseInt(managerIdInput);
+                    if (managerIdInput && parsedId == managerIdInput) {
+                      return true;
+                    } else {
+                      console.log('You need to enter a manager ID!');
+                      return false;
+                    }
+                }
             },
 
             {
                 type: "input",
                 name: "managerEmail",
                 message: "What is the email address for this manager?",
-                // validate: managerEmailInput => {
-                //     if (managerEmailInput.includes('@')) {
-                //       return true;
-                //     } else {
-                //       console.log('You need to enter a valid email address.');
-                //       return false;
-                //     }
-                // }
+                validate: managerEmailInput => {
+                    if (managerEmailInput.includes('@')) {
+                      return true;
+                    } else {
+                      console.log('You need to enter a valid email address.');
+                      return false;
+                    }
+                }
             },
 
             {
                 type: "input",
                 name: "managerPhone",
                 message: "What is the ten digit office phone number for the manager?",
-                // validate: managerPhoneInput => {
-                //     if (managerPhoneInput.length === 10) {
-                //       return true;
-                //     } else {
-                //       console.log('You need to enter a ten-digit (no other symbols or characters) office phone number.');
-                //       return false;
-                //     }
-                // }
+                validate: managerPhoneInput => {
+                    if (managerPhoneInput.length === 10) {
+                      return true;
+                    } else {
+                      console.log('You need to enter a ten-digit (no other symbols or characters) office phone number.');
+                      return false;
+                    }
+                }
             },
         ]);
 
@@ -258,7 +258,7 @@ const quitFunction = () => {
         // console.log(teamArray);
         // console.log('got to quit function');
         const readyHtml = generatedHtml(teamArray);
-        generateTeam.copyFile();
+        // generateTeam.copyFile();
         generateTeam.writeFile(readyHtml);
       };
 
